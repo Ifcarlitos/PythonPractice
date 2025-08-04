@@ -20,11 +20,11 @@ Bienvenido a **PyLearn**, una aplicación web pensada para que los usuarios pued
 
 | Componente    | Tecnología propuesta                |
 |---------------|-------------------------------------|
-| Backend       | Python + FastAPI / Flask            |
+| Backend       | Python + FastAPI                    |
 | Frontend      | React / HTMX / Jinja2 (según stack) |
 | ORM           | SQLAlchemy                          |
 | Base de datos | SQLite (dev), PostgreSQL (prod)     |
-| Autenticación | JWT / Flask-Login                   |
+| Autenticación | JWT                                 |
 
 > Puedes cambiar el stack según preferencias. El diseño actual es modular para facilitar futuras migraciones.
 
@@ -37,3 +37,31 @@ Bienvenido a **PyLearn**, una aplicación web pensada para que los usuarios pued
 ```bash
 git clone https://github.com/tu-usuario/pylearn-webapp.git
 cd pylearn-webapp
+```
+
+### 2. Iniciar el backend (modo desarrollo)
+
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+La API estará disponible en [http://localhost:8000](http://localhost:8000).
+
+### 3. Endpoints iniciales
+
+- `POST /auth/register` – crear un nuevo usuario
+- `POST /auth/login` – obtener token JWT
+- `POST /courses` – crear un curso
+- `GET /courses` – listar cursos
+- `POST /courses/{course_id}/lessons` – agregar una lección a un curso
+- `GET /courses/{course_id}/lessons` – listar lecciones de un curso
+
+---
+
+## 📄 Licencia
+
+MIT
