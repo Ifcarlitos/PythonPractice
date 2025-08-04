@@ -1,24 +1,28 @@
 from datetime import datetime
 from typing import List, Optional
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, ConfigDict
+
 
 class UserBase(BaseModel):
     username: str
-    email: EmailStr
+    email: str
+
 
 class UserCreate(UserBase):
     password: str
+
 
 class UserRead(UserBase):
     id: int
     created_at: datetime
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
+
 
 class UserLogin(BaseModel):
     username: str
     password: str
+
 
 class Token(BaseModel):
     access_token: str
@@ -38,8 +42,7 @@ class LessonCreate(LessonBase):
 class LessonRead(LessonBase):
     id: int
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class CourseBase(BaseModel):
@@ -57,5 +60,4 @@ class CourseRead(CourseBase):
     created_at: datetime
     lessons: List[LessonRead] = []
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
