@@ -7,8 +7,8 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="PyLearn API")
 
-app.include_router(auth.router)
 app.include_router(courses.router)
+
 
 @app.get("/")
 async def root():

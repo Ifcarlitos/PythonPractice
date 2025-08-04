@@ -60,6 +60,7 @@ La API estará disponible en [http://localhost:8000](http://localhost:8000).
 - `POST /courses/{course_id}/lessons` – agregar una lección a un curso
 - `GET /courses/{course_id}/lessons` – listar lecciones de un curso
 
+=======
 ---
 
 ## 📄 Licencia
