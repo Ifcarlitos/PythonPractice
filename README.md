@@ -51,7 +51,17 @@ uvicorn app.main:app --reload
 
 La API estará disponible en [http://localhost:8000](http://localhost:8000).
 
-### 3. Endpoints iniciales
+### 3. Iniciar el frontend
+
+El frontend es una pequeña SPA en vanilla JS.  Puedes abrirlo directamente en tu navegador:
+
+```bash
+open frontend/index.html  # macOS
+# o
+xdg-open frontend/index.html  # Linux
+```
+
+### 4. Endpoints iniciales
 
 - `POST /auth/register` – crear un nuevo usuario
 - `POST /auth/login` – obtener token JWT
