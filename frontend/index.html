@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyLearn</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>PyLearn WebApp</h1>
+
+  <section id="auth">
+    <h2>Autenticación</h2>
+    <div id="register">
+      <h3>Registro</h3>
+      <form id="register-form">
+        <input type="text" id="reg-username" placeholder="Usuario" required />
+        <input type="email" id="reg-email" placeholder="Email" required />
+        <input type="password" id="reg-password" placeholder="Contraseña" required />
+        <button type="submit">Registrarse</button>
+      </form>
+      <p id="register-msg" class="message"></p>
+    </div>
+    <div id="login">
+      <h3>Login</h3>
+      <form id="login-form">
+        <input type="text" id="login-username" placeholder="Usuario" required />
+        <input type="password" id="login-password" placeholder="Contraseña" required />
+        <button type="submit">Entrar</button>
+      </form>
+      <p id="login-msg" class="message"></p>
+    </div>
+  </section>
+
+  <section id="courses" style="display:none;">
+    <h2>Cursos</h2>
+    <form id="course-form">
+      <input type="text" id="course-title" placeholder="Título" required />
+      <input type="text" id="course-desc" placeholder="Descripción" />
+      <input type="text" id="course-level" placeholder="Nivel" />
+      <button type="submit">Crear curso</button>
+    </form>
+    <ul id="course-list"></ul>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
